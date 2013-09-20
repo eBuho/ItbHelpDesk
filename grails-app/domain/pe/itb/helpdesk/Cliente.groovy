@@ -1,16 +1,13 @@
-package pe.itb.comunes
+package pe.itb.helpdesk
+
+import pe.itb.comunes.Persona;
 
 class Cliente extends Persona{
 
 	String codCliente
-	Date dateCreated
-	String usuCrea
-	Date lastUpdated
-	String usuModifica
 	
-	static hasMany = [ticket:Ticket]	
-	
-	
+	static hasMany = [tickets:Ticket]	
+		
     static constraints = {
     }
 	

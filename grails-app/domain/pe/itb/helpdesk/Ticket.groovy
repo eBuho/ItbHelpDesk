@@ -1,6 +1,4 @@
-package pe.itb.comunes
-
-import java.lang.ClassValue.Version;
+package pe.itb.helpdesk
 
 class Ticket {
 	
@@ -13,7 +11,7 @@ class Ticket {
 	Date lastUpdated
 	String usuModifica
 	
-	Cliente cliente
+	static hasOne = [cliente:Cliente]
 
     static constraints = {
 		numTicket(maxSize:10, nullable: true, editable:false) 		

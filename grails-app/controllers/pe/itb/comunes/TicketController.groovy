@@ -1,5 +1,7 @@
 package pe.itb.comunes
 
+import pe.itb.helpdesk.Ticket;
+
 class TicketController {
 
     def scaffold = true
