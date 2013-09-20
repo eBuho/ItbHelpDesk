@@ -29,5 +29,10 @@ class Persona {
 		numTelefono(matches:"[0-9]+", maxSize:9);
 		desEmail(email:true, maxSize:60);
 		desDireccion(maxSize:200);
+		ubigeo(blank: true, nullable:true)
+	}
+	
+	static mapping = {
+		tablePerHierarchy false
 	}
 }
