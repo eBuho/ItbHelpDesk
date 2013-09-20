@@ -11,7 +11,7 @@ class Ticket {
 	Date lastUpdated
 	String usuModifica
 	
-	static hasOne = [cliente:Cliente]
+	Cliente cliente
 
     static constraints = {
 		numTicket(maxSize:10, nullable: true, editable:false) 		

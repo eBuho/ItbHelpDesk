@@ -1,4 +1,4 @@
-package itb.pe.seguridad
+package pe.itb.seguridad
 
 import pe.itb.comunes.Persona
 

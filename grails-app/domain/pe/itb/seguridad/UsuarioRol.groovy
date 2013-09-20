@@ -1,4 +1,4 @@
-package itb.pe.seguridad
+package pe.itb.seguridad
 
 import org.apache.commons.lang.builder.HashCodeBuilder
 
