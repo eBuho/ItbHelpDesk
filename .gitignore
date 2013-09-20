@@ -11,7 +11,8 @@
 /*.launch
 /*.tmproj
 /ivy*
-/eclipse
+/target/classes
+/target-eclipse/classes
 
 # default HSQL database files for production mode
 /prodDb.*
@@ -32,8 +33,6 @@
 /*.zip
 
 # older plugin install locations
-/plugins
-/web-app/plugins
 /web-app/WEB-INF/classes
 
 # "temporary" build files
