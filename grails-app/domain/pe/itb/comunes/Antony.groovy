@@ -9,6 +9,7 @@ class Antony {
 	String sexo
 	Date Fecha_nacimiento
 	int telefono
+	String SegundoNombre
 	
     static constraints = {
     }
