@@ -5,6 +5,7 @@ class Javier {
 	String nombre
 	String edad
 	String apellido
+	String sexo
 	
     static constraints = {
     }
