@@ -6,7 +6,13 @@ class Antony {
 	String apellido
 	String dni
 	String edad
+	String sexo
+	Date Fecha_nacimiento
 
     static constraints = {
     }
+	
+	
+	
+	
 }
