@@ -8,8 +8,10 @@ class Javier {
 	Date fecNacimiento
 	String direccion
 	String telefono
+	String email
 	
     static constraints = {
+		email(email)
     }
     
     String toString(){
