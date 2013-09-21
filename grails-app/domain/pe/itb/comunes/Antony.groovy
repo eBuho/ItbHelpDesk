@@ -7,11 +7,20 @@ class Antony {
 	String dni
 	String edad
 	String sexo
-	Date Fecha_nacimiento
-	int telefono
+	Date fecNacimiento	
+	String telefono
 	String SegundoNombre
+	String email
 	
     static constraints = {
     }
+	
+	String toString(){
+		nombre + apellido
+	}
+	
+	int edad(){
+		//pdte
+	}
 	
 }
