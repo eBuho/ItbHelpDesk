@@ -7,6 +7,7 @@ class Javier {
 	String sexo
 	Date fecNacimiento
 	String direccion
+	String telefono
 	
     static constraints = {
     }
