@@ -3,9 +3,9 @@ package pe.itb.comunes
 class Javier {
 
 	String nombre
-	String edad
 	String apellido
 	String sexo
+	Date fecNacimiento
 	
     static constraints = {
     }
@@ -13,4 +13,9 @@ class Javier {
     String toString(){
 		nombre + apellido
 	}
+	
+	int edad(){
+		//Me falta calcular no se
+	}
+	
 }
