@@ -6,11 +6,12 @@ class Javier {
 	String edad
 	String apellido
 	String sexo
+	String direccion
 	
     static constraints = {
     }
     
     String toString(){
-		nombre + apellido
+		nombre + apellido + sexo + direccion
 	}
 }
