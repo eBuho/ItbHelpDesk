@@ -14,8 +14,8 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:oracle:thin:@192.168.0.103:1521:fedesa"
+            dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+            url = "jdbc:oracle:thin:@localhost:1521:XE"
         }
     }
     test {
