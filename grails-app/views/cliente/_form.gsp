@@ -32,7 +32,7 @@
 		
 	</label>
 <%--	<g:select name="tipDocumento" from="${clienteInstance.constraints.tipDocumento.inList}" value="${clienteInstance?.tipDocumento}" valueMessagePrefix="cliente.tipDocumento" noSelection="['': '']"/>--%>
-	<itb:selectParametro dominio="001" entidad="${clienteInstance}" atributo="tipDocumento"/>
+	<itb:selectParametro catalogo="001" entidad="${clienteInstance}" atributo="tipDocumento"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'numDocumento', 'error')} ">

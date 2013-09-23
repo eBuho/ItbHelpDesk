@@ -1,7 +1,5 @@
 package pe.itb.comunes
 
-import java.util.Set;
-
 import pe.itb.seguridad.Rol;
 
 class Parametro {
@@ -12,7 +10,7 @@ class Parametro {
 	String valCadena
 	int valEntero
 	Date valFecha
-	Parametro dominio
+	Parametro catalogo
 
     static constraints = {
 		codParametro()
@@ -20,7 +18,7 @@ class Parametro {
 		desParametro()
 		valCadena(nullable:true)
 		valFecha(nullable:true)
-		dominio(nullable:true)
+		catalogo(nullable:true)
     }
 	
 	String toString(){
@@ -28,7 +26,7 @@ class Parametro {
 	}
 	
 	def getParametros() {
-		Parametro.findAllByDominio(this)
+		Parametro.findAllByCatalogo(this)
 	}
 	
 }

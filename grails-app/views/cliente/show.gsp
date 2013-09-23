@@ -56,7 +56,7 @@
 					
 						<span class="property-value" aria-labelledby="tipDocumento-label">
 <%--						<g:fieldValue bean="${clienteInstance}" field="tipDocumento"/>--%>
-							<itb:decodeParametro valor="${clienteInstance?.tipDocumento}" dominio="001" atributo="tipDocumento"/>
+							<itb:decodeParametro valor="${clienteInstance?.tipDocumento}" catalogo="001" atributo="tipDocumento"/>
 						</span>
 					
 				</li>
