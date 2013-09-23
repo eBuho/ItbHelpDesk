@@ -24,12 +24,14 @@ class Persona {
 		nombre(blank:false, nullable:true, maxSize:60);
 		tipDocumento(inList:['D', 'P', 'C', 'N'], maxSize:1);
 		numDocumento(matches:"[0-9]+", unique:['tipDocumento'], maxSize:9);
-		flgSexo(inList:['M', 'F'], maxSize:1);
+		flgSexo(inList:['M', 'F'], maxSize:1, nullable:true);
 		fecNacimiento(widget: "datePicker", nullable:true);
-		numTelefono(matches:"[0-9]+", maxSize:9);
-		desEmail(email:true, maxSize:60);
-		desDireccion(maxSize:200);
+		numTelefono(matches:"[0-9]+", maxSize:9, nullable:true);
+		desEmail(email:true, maxSize:60, nullable:true);
+		desDireccion(maxSize:200, nullable:true);
 		ubigeo(blank: true, nullable:true)
+		usuCrea(nullable:true)
+		usuModifica(nullable:true)
 	}
 	
 	static mapping = {
