@@ -48,7 +48,8 @@
 		<g:message code="cliente.flgSexo.label" default="Flg Sexo" />
 		
 	</label>
-	<g:select name="flgSexo" from="${clienteInstance.constraints.flgSexo.inList}" value="${clienteInstance?.flgSexo}" valueMessagePrefix="cliente.flgSexo" noSelection="['': '']"/>
+<%--	<g:select name="flgSexo" from="${clienteInstance.constraints.flgSexo.inList}" value="${clienteInstance?.flgSexo}" valueMessagePrefix="cliente.flgSexo" noSelection="['': '']"/>--%>
+	<itb:selectParametro atributo="flgSexo" catalogo="002" entidad="${clienteInstance}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'fecNacimiento', 'error')} ">

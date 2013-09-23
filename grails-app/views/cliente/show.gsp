@@ -75,7 +75,10 @@
 				<li class="fieldcontain">
 					<span id="flgSexo-label" class="property-label"><g:message code="cliente.flgSexo.label" default="Flg Sexo" /></span>
 					
-						<span class="property-value" aria-labelledby="flgSexo-label"><g:fieldValue bean="${clienteInstance}" field="flgSexo"/></span>
+						<span class="property-value" aria-labelledby="flgSexo-label">
+							<itb:decodeParametro valor="${clienteInstance?.flgSexo}" catalogo="002" atributo="flgSexo"/>
+<%--						<g:fieldValue bean="${clienteInstance}" field="flgSexo"/>--%>
+						</span>
 					
 				</li>
 				</g:if>

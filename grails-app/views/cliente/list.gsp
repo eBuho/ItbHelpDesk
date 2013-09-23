@@ -48,11 +48,13 @@
 					
 						<td>${fieldValue(bean: clienteInstance, field: "nombre")}</td>
 					
-						<td>${fieldValue(bean: clienteInstance, field: "tipDocumento")}</td>
+<%--					<td>${fieldValue(bean: clienteInstance, field: "tipDocumento")}</td>--%>
+						<td><itb:decodeParametro atributo="tipDocumento" valor="${clienteInstance.tipDocumento}" catalogo="001"/></td>
 					
 						<td>${fieldValue(bean: clienteInstance, field: "numDocumento")}</td>
 					
-						<td>${fieldValue(bean: clienteInstance, field: "flgSexo")}</td>
+<%--					<td>${fieldValue(bean: clienteInstance, field: "flgSexo")}</td>--%>
+						<td><itb:decodeParametro atributo="flgSexo" valor="${clienteInstance.flgSexo}" catalogo="002"/></td>
 					
 					</tr>
 				</g:each>
