@@ -107,3 +107,8 @@ grails.plugins.springsecurity.interceptUrlMap = [
 	'/login/**':	['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/logout/**':	['IS_AUTHENTICATED_ANONYMOUSLY'],
 	]
+
+// Jcondor - global constraints
+grails.gorm.default.constraints = {
+	'*'(nullable: true)
+}

@@ -1,21 +1,23 @@
 package pe.itb.comunes
 
+import java.util.Date;
+
 class Persona {
 
-    String apePaterno;
-	String apeMaterno;
-	String nombre;
-	String tipDocumento;
-	String numDocumento;
-	String flgSexo;
-	Date fecNacimiento;
-	String numTelefono;
-	String desEmail;
-	String desDireccion;
-	Date dateCreated;
-	String usuCrea;
-	Date lastUpdated;
-	String usuModifica;
+    String apePaterno
+	String apeMaterno
+	String nombre
+	String tipDocumento
+	String numDocumento
+	String flgSexo
+	Date fecNacimiento
+	String numTelefono
+	String desEmail
+	String desDireccion
+	Date dateCreated
+	Date lastUpdated
+	String usuarioCrea
+	String usuarioModifica
 	Ubigeo ubigeo
 
 	static constraints = {
@@ -30,8 +32,8 @@ class Persona {
 		desEmail(email:true, maxSize:60, nullable:true);
 		desDireccion(maxSize:200, nullable:true);
 		ubigeo(blank: true, nullable:true)
-		usuCrea(nullable:true)
-		usuModifica(nullable:true)
+		usuarioCrea(nullable:true)
+		usuarioModifica(nullable:true)
 	}
 	
 	static mapping = {

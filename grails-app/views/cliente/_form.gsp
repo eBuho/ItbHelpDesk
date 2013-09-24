@@ -1,7 +1,5 @@
 <%@ page import="pe.itb.helpdesk.Cliente" %>
 
-
-
 <div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'apePaterno', 'error')} ">
 	<label for="apePaterno">
 		<g:message code="cliente.apePaterno.label" default="Ape Paterno" />
@@ -117,19 +115,19 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'usuCrea', 'error')} ">
-	<label for="usuCrea">
-		<g:message code="cliente.usuCrea.label" default="Usu Crea" />
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'usuarioCrea', 'error')} ">
+	<label for="usuarioCrea">
+		<g:message code="cliente.usuarioCrea.label" default="Usu Crea" />
 		
 	</label>
-	<g:textField name="usuCrea" value="${clienteInstance?.usuCrea}"/>
+	<g:textField name="usuarioCrea" value="${clienteInstance?.usuarioCrea}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'usuModifica', 'error')} ">
-	<label for="usuModifica">
-		<g:message code="cliente.usuModifica.label" default="Usu Modifica" />
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'usuarioModifica', 'error')} ">
+	<label for="usuarioModifica">
+		<g:message code="cliente.usuarioModifica.label" default="Usu Modifica" />
 		
 	</label>
-	<g:textField name="usuModifica" value="${clienteInstance?.usuModifica}"/>
+	<g:textField name="usuarioModifica" value="${clienteInstance?.usuarioModifica}"/>
 </div>
 

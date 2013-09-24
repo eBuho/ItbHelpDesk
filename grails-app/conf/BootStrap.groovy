@@ -43,6 +43,24 @@ class BootStrap {
 			parametro.save(true)
 		}
 		
+		//Estados
+		def catEstado = new Parametro(codParametro:"003", codElemento:"00", desParametro:"Estados")
+		catEstado.validate()
+		if (catEstado.hasErrors()){
+			catEstado.errors.allErrors.each { println it }
+		}
+		catEstado.save(true)
+		contItem = 0
+		[A:"Activo", I:"Inactivo"].each{flgEstado, desEstado ->
+			contItem ++
+			def parametro = new Parametro(codParametro:catEstado.codParametro, codElemento:contItem.toString().padLeft(2,"0"), desParametro:desEstado, valCadena:flgEstado, catalogo:catEstado)
+			parametro.validate()
+			if (parametro.hasErrors()){
+				parametro.errors.allErrors.each { println it }
+			}
+			parametro.save(true)
+		}
+		
 		/*** Creacion de usuarios de prueba ****/
 		def jcondor = new Usuario(apePaterno:"Condor", apeMaterno:"Oria", nombres:"Javier", tipDocumento:"D",
 			numDocumento:"12345678", username:"jcondor", password:"jcondor", enabled:true)

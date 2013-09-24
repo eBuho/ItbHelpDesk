@@ -2,19 +2,20 @@ package pe.itb.helpdesk
 
 class Ticket {
 	
-	String numTicket
-	Date fechSolicitud
-	String desAsunto
-	String flgEstado
+	String numeroDeTicket
+	Date fechaDeSolicitud
+	String asunto
+	String estado
+	String descripcion
 	Date dateCreated
-	String usuCrea
 	Date lastUpdated
-	String usuModifica
-	
-	Cliente cliente
+	String usuarioCrea
+	String usuarioModifica
+	static belongsTo = [cliente: Cliente, clase: ClaseTicket]
 
     static constraints = {
-		numTicket(maxSize:10, nullable: true, editable:false) 		
+		numeroDeTicket(maxSize:10, nullable: true, editable:false)
+		descripcion(widget:"textarea") 		
     }
 	
 	static mapping = {

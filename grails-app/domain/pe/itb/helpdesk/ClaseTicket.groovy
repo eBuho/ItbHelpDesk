@@ -8,9 +8,9 @@ class ClaseTicket {
 	String desClase
 	String flgEstado
 	Date dateCreated
-	String usuCrea
 	Date lastUpdated
-	String usuModifica
+	String usuarioCrea
+	String usuarioModifica
 	
 	ClaseTicket claseTicketSup
 

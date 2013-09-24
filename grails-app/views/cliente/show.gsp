@@ -166,20 +166,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${clienteInstance?.usuCrea}">
+				<g:if test="${clienteInstance?.usuarioCrea}">
 				<li class="fieldcontain">
-					<span id="usuCrea-label" class="property-label"><g:message code="cliente.usuCrea.label" default="Usu Crea" /></span>
+					<span id="usuarioCrea-label" class="property-label"><g:message code="cliente.usuarioCrea.label" default="Usu Crea" /></span>
 					
-						<span class="property-value" aria-labelledby="usuCrea-label"><g:fieldValue bean="${clienteInstance}" field="usuCrea"/></span>
+						<span class="property-value" aria-labelledby="usuarioCrea-label"><g:fieldValue bean="${clienteInstance}" field="usuarioCrea"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${clienteInstance?.usuModifica}">
+				<g:if test="${clienteInstance?.usuarioModifica}">
 				<li class="fieldcontain">
-					<span id="usuModifica-label" class="property-label"><g:message code="cliente.usuModifica.label" default="Usu Modifica" /></span>
+					<span id="usuarioModifica-label" class="property-label"><g:message code="cliente.usuarioModifica.label" default="Usu Modifica" /></span>
 					
-						<span class="property-value" aria-labelledby="usuModifica-label"><g:fieldValue bean="${clienteInstance}" field="usuModifica"/></span>
+						<span class="property-value" aria-labelledby="usuarioModifica-label"><g:fieldValue bean="${clienteInstance}" field="usuarioModifica"/></span>
 					
 				</li>
 				</g:if>

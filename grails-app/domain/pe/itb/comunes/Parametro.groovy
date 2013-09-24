@@ -1,5 +1,7 @@
 package pe.itb.comunes
 
+import java.util.Date;
+
 import pe.itb.seguridad.Rol;
 
 class Parametro {
@@ -10,7 +12,11 @@ class Parametro {
 	String valCadena
 	int valEntero
 	Date valFecha
-	Parametro catalogo
+	Date dateCreated
+	Date lastUpdated
+	String usuarioCrea
+	String usuarioModifica
+	static belongsTo = [catalogo: Parametro]
 
     static constraints = {
 		codParametro()
