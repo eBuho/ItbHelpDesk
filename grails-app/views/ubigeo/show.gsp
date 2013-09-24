@@ -41,20 +41,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${ubigeoInstance?.usuCrea}">
+				<g:if test="${ubigeoInstance?.usuarioCrea}">
 				<li class="fieldcontain">
-					<span id="usuCrea-label" class="property-label"><g:message code="ubigeo.usuCrea.label" default="Usu Crea" /></span>
+					<span id="usuariocrea-label" class="property-label"><g:message code="ubigeo.usuarioCrea.label" default="Usu Crea" /></span>
 					
-						<span class="property-value" aria-labelledby="usuCrea-label"><g:fieldValue bean="${ubigeoInstance}" field="usuCrea"/></span>
+						<span class="property-value" aria-labelledby="-label"><g:fieldValue bean="${ubigeoInstance}" field="usuarioCrea"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${ubigeoInstance?.usuModifica}">
+				<g:if test="${ubigeoInstance?.usuarioModifica}">
 				<li class="fieldcontain">
-					<span id="usuModifica-label" class="property-label"><g:message code="ubigeo.usuModifica.label" default="Usu Modifica" /></span>
+					<span id="usuarioModifica-label" class="property-label"><g:message code="ubigeo.usuarioModifica.label" default="Usu Modifica" /></span>
 					
-						<span class="property-value" aria-labelledby="usuModifica-label"><g:fieldValue bean="${ubigeoInstance}" field="usuModifica"/></span>
+						<span class="property-value" aria-labelledby="usuarioModifica-label"><g:fieldValue bean="${ubigeoInstance}" field="usuarioModifica"/></span>
 					
 				</li>
 				</g:if>
