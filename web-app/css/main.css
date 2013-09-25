@@ -62,8 +62,13 @@ body {
 #itbCabecera .bienvenida a {
 	color: #00afef;
 }
-
-
+#itbCabecera .sesion {
+	margin:-95px 0 0 780px; 
+	position:right;
+}
+#itbCabecera .sesion a {
+	color: #00afef;
+}
 /* replace with .no-boxshadow body if you have modernizr available */
 .ie6 body,
 .ie7 body,
@@ -617,7 +622,7 @@ a.skip {
 #login {
 		width: 340px;
 		padding-top: 20px;
-		margin: 60px auto;
+		margin: 100px auto;
 		text-align: left;
 		border: 1px solid #aab;
 	}
