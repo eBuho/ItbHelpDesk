@@ -25,7 +25,7 @@ class Persona {
 		apeMaterno(maxSize:40);
 		nombre(blank:false, nullable:true, maxSize:60);
 		tipDocumento(inList:['D', 'P', 'C', 'N'], maxSize:1);
-		numDocumento(matches:"[0-9]+", unique:['tipDocumento'], maxSize:9);
+		//numDocumento(matches:"[0-9]+", unique:['tipDocumento'], maxSize:9);
 		flgSexo(inList:['M', 'F'], maxSize:1, nullable:true);
 		fecNacimiento(widget: "datePicker", nullable:true);
 		numTelefono(matches:"[0-9]+", maxSize:9, nullable:true);

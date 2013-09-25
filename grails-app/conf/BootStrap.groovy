@@ -1,11 +1,12 @@
 import pe.itb.comunes.*
+import pe.itb.helpdesk.*
 import pe.itb.seguridad.*
 
 class BootStrap {
 
-    def init = { servletContext ->
+	def init = { servletContext ->
 		int contItem
-		
+
 		/*** Creacion de parametros de prueba ****/
 		//Tipos de documento
 		def catTipDocs = new Parametro(codParametro:"001", codElemento:"00", desParametro:"Tipos de documento")
@@ -24,7 +25,7 @@ class BootStrap {
 			}
 			parametro.save(true)
 		}
-		
+
 		//Sexo
 		def catSexo = new Parametro(codParametro:"002", codElemento:"00", desParametro:"Género de personas")
 		catSexo.validate()
@@ -42,7 +43,7 @@ class BootStrap {
 			}
 			parametro.save(true)
 		}
-		
+
 		//Estados
 		def catEstado = new Parametro(codParametro:"003", codElemento:"00", desParametro:"Estados")
 		catEstado.validate()
@@ -60,16 +61,100 @@ class BootStrap {
 			}
 			parametro.save(true)
 		}
-		
+
 		/*** Creacion de usuarios de prueba ****/
 		def jcondor = new Usuario(apePaterno:"Condor", apeMaterno:"Oria", nombres:"Javier", tipDocumento:"D",
-			numDocumento:"12345678", username:"jcondor", password:"jcondor", enabled:true)
+		numDocumento:"12345678", username:"jcondor", password:"jcondor", enabled:true)
 		jcondor.validate()
 		if (jcondor.hasErrors()){
 			jcondor.errors.allErrors.each { println it }
 		}
 		jcondor.save(true)
-    }
-    def destroy = {
-    }
+
+		/*** Nuevo cliente ***/
+		def jcondorc = new Cliente()
+		jcondorc.properties = jcondor.properties
+		jcondorc.codCliente = "000001"
+		jcondorc.validate()
+		if (jcondorc.hasErrors()){
+			jcondorc.errors.allErrors.each { println it }
+		}
+		jcondorc.save(true)
+
+		/*** Ubigeos ***/
+		int contProv, contDist, contDpto
+		contDpto = 0
+		[
+			"AMAZONAS",
+			"ANCASH",
+			"APURIMAC",
+			"AREQUIPA",
+			"AYACUCHO",
+			"CAJAMARCA",
+			"CALLAO",
+			"CUSCO",
+			"HUANCAVELICA",
+			"HUANUCO",
+			"ICA",
+			"JUNIN",
+			"LA LIBERTAD",
+			"LAMBAYEQUE",
+			"LIMA",
+			"LORETO",
+			"MADRE DE DIOS",
+			"MOQUEGUA",
+			"PASCO",
+			"PIURA",
+			"PUNO",
+			"SAN MARTIN",
+			"TACNA",
+			"TUMBES",
+			"UCAYALI"
+		].each {nomDpto->
+			contDpto ++
+			def dpto = new Ubigeo(codUbigeo:contDpto.toString().padLeft(2,"0") + "0000",desUbigeo:nomDpto)
+			dpto.save(true)
+			if(contDpto==15) {
+				contProv = 0
+				[
+					"LIMA",
+					"BARRANCA",
+					"CAJATAMBO",
+					"CANTA",
+					"CAÑETE",
+					"HUARAL",
+					"HUAROCHIRI",
+					"HUAURA",
+					"OYON",
+					"YAUYOS"
+				].each { nomProv ->
+					contProv++
+					def prov = new Ubigeo(codUbigeo:dpto.codUbigeo.substring(0,2) +contProv.toString().padLeft(2,"0")+"00",desUbigeo:nomProv,ubigeoSup:dpto)
+					prov.save(true)
+					if(contProv==1) {
+						contDist = 0
+						[
+							"LIMA",
+							"ANCON",
+							"ATE",
+							"BARRANCO",
+							"BREÑA",
+							"CARABAYLLO",
+							"CHACLACAYO",
+							"CHORRILLOS",
+							"CIENEGUILLA",
+							"COMAS"
+						].each { nomDist ->
+							contDist ++
+							def dist = new Ubigeo(codUbigeo:prov.codUbigeo.substring(0,4)+contDist.toString().padLeft(2,"0"),desUbigeo:nomDist,ubigeoSup:prov)
+							dist.save(true)
+						}
+					}
+				}
+			}
+		}
+	}
+
+	def destroy = {
+	}
 }
