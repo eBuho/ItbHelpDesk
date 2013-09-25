@@ -72,14 +72,14 @@ class BootStrap {
 		jcondor.save(true)
 
 		/*** Nuevo cliente ***/
-		
-		def jcondor1 = (Cliente)Persona.get(jcondor.id)
-		jcondor1.codCliente = "000001"
-		jcondor1.validate()
-		if (jcondor1.hasErrors()){
-			jcondor1.errors.allErrors.each { println it }
+		def jcondorc = new Cliente()
+		jcondorc.properties = jcondor.properties
+		jcondorc.codCliente = "000001"
+		jcondorc.validate()
+		if (jcondorc.hasErrors()){
+			jcondorc.errors.allErrors.each { println it }
 		}
-		jcondor1.save(true)
+		jcondorc.save(true)
 
 		/*** Ubigeos ***/
 		int contProv, contDist, contDpto
