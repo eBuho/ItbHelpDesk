@@ -18,10 +18,15 @@
 		<r:layoutResources />
 	</head>
 	<body>
-		<div id="itbCabecera" role="banner"><a href="http://www.itbconsulting.pe"><img src="${resource(dir: 'images', file: 'itbCabecera.png')}" 
-
-alt="itbHelpDesk"/></a>
-<sec:ifLoggedIn>Bienvenido <sec:username/></sec:ifLoggedIn></div>
+		<div id="itbCabecera" role="banner">
+			<a href="http://www.itbconsulting.pe">
+				<img src="${resource(dir: 'images', file: 'itbCabecera.png')}" alt="itbHelpDesk"/>
+			</a>
+			<div id = "bienvenida" class = "bienvenida">
+				<a><sec:ifLoggedIn><g:message code="springSecurity.login.bienvenida"/>  <sec:username/></sec:ifLoggedIn></a>
+			</div>
+		</div>
+				
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo">
 		<p>Calle Prolongación Manco Segundo 115 San Miguel, Lima-1, Perú / Telf.: 993056792<br />

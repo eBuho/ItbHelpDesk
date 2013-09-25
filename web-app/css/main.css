@@ -55,6 +55,15 @@ body {
 	background-color: #FFFFFF; 
 }
 
+#itbCabecera .bienvenida {
+	margin:-95px 0 0 95px; 
+	position:absolute;
+}
+#itbCabecera .bienvenida a {
+	color: #00afef;
+}
+
+
 /* replace with .no-boxshadow body if you have modernizr available */
 .ie6 body,
 .ie7 body,

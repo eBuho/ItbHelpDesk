@@ -7,7 +7,7 @@
 <body>
 
 <div id='login'>
-		<div class='fheader'><g:message code="springSecurity.login.header"/></div>
+		<!-- <div class='fheader'><g:message code="springSecurity.login.header"/></div>  -->
 
 		<g:if test='${flash.message}'>
 			<div class='login_message'>${flash.message}</div>
