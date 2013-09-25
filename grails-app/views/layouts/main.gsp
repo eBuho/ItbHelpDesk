@@ -18,12 +18,16 @@
 		<r:layoutResources />
 	</head>
 	<body>
-		<div id="itbCabecera" role="banner"><a href="http://www.itbconsulting.pe"><img src="${resource(dir: 'images', file: 'itbCabecera.png')}" alt="itbHelpDesk"/></a></div>
+		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
 		<g:layoutBody/>
+<<<<<<< HEAD
 		<div class="footer" role="contentinfo">
 		<p>Calle Prolongación Manco Segundo 115 San Miguel, Lima-1, Perú / Telf.: 993056792<br />
 © Copyright ITB Consulting SAC Derechos Reservados</p>
 		</div>
+=======
+		<div class="footer" role="contentinfo"></div>
+>>>>>>> branch 'master' of https://github.com/eBuho/ItbHelpDesk.git
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 		<g:javascript library="application"/>
 		<r:layoutResources />

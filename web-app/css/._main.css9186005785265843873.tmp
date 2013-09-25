@@ -48,7 +48,11 @@ body {
 }
 
 #grailsLogo {
-	background-color: #abbf78;
+	background-color: ##abbf78;
+}
+
+#itbCabecera {
+	background-color: #FFFFFF; 
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
@@ -108,15 +112,17 @@ img {
 }
 
 .footer {
-	background: #abbf78;
-	color: #000;
+	background: #00AFEF;
+	color: #ffffff;
 	clear: both;
 	font-size: 0.8em;
 	margin-top: 1.5em;
 	padding: 1em;
 	min-height: 1em;
 }
-
+.footer p {
+	text-align: center;
+}
 .footer a {
 	color: #255b17;
 }
