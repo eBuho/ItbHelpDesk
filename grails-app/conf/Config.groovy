@@ -90,10 +90,6 @@ log4j = {
            'net.sf.ehcache.hibernate'
 }
 
-
-
-
-
 // Added by the Spring Security Core plugin:
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'pe.itb.seguridad.Usuario'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'pe.itb.seguridad.UsuarioRol'
@@ -106,6 +102,8 @@ grails.plugins.springsecurity.interceptUrlMap = [
 	'/ubigeo/**':	['IS_AUTHENTICATED_FULLY'],
 	'/login/**':	['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/logout/**':	['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/helpdesk/bienvenida/**':	['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/helpdesk/**':	['IS_AUTHENTICATED_FULLY'],
 	]
 
 // Jcondor - global constraints
