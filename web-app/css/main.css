@@ -594,3 +594,23 @@ a.skip {
 	position: absolute;
 	left: -9999px;
 }
+
+/*CSS adicional para el software ITB Consulting*/
+
+/** LOGIN **/
+
+#login {
+		width: 340px;
+		padding-top: 20px;
+		margin: 60px auto;
+		text-align: left;
+		border: 1px solid #aab;
+	}
+#login .cssform p {
+	clear: left;
+	margin: 0;
+	padding: 4px 0 3px 0;
+	padding-left: 105px;
+	margin-bottom: 10px;
+	height: 1%;
+}
