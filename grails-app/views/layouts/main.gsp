@@ -20,7 +20,8 @@
 	<body>
 		<div id="itbCabecera" role="banner"><a href="http://www.itbconsulting.pe"><img src="${resource(dir: 'images', file: 'itbCabecera.png')}" 
 
-alt="itbHelpDesk"/></a></div>
+alt="itbHelpDesk"/></a>
+<sec:ifLoggedIn>Bienvenido <sec:username/></sec:ifLoggedIn></div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo">
 		<p>Calle Prolongación Manco Segundo 115 San Miguel, Lima-1, Perú / Telf.: 993056792<br />
