@@ -7,7 +7,7 @@
 		<g:message code="ticket.numeroDeTicket.label" default="Numero De Ticket" />
 		
 	</label>
-	<g:textField name="numeroDeTicket" maxlength="10" readonly="readonly" value="${ticketInstance?.numeroDeTicket}"/>
+	<g:textField name="numeroDeTicket" maxlength="10" value="${ticketInstance?.numeroDeTicket}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: ticketInstance, field: 'asunto', 'error')} ">

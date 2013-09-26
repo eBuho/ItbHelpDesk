@@ -31,13 +31,22 @@
 			src="${resource(dir: 'images', file: 'itbCabecera.png')}"
 			alt="itbHelpDesk" />
 		</a>
-		<div class="bienvenida" >
-			<a><sec:ifLoggedIn>
+		<div class="bienvenida">
+			<p>
+				<sec:ifLoggedIn>
 					<g:message code="springSecurity.login.bienvenida" />
 					<sec:username />
-				</sec:ifLoggedIn></a>
+				</sec:ifLoggedIn>
+			</p>
 		</div>
-		<div class="sesion"><a>Inicio | Mis datos  | Salir</a></div>
+		<div class="sesion">
+			<p>
+				<sec:ifLoggedIn>
+					<g:link url="principalUsuario">Inicio</g:link> |<g:link url=""> Mis datos</g:link>  | <g:link
+						url="../logout">Salir</g:link>
+				</sec:ifLoggedIn>
+			</p>
+		</div>
 	</div>
 
 	<g:layoutBody />

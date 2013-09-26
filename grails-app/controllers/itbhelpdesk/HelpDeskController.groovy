@@ -1,4 +1,5 @@
 package itbhelpdesk
+import pe.itb.helpdesk.*
 
 class HelpDeskController {
 
@@ -11,6 +12,8 @@ class HelpDeskController {
 	}
 	
 	def principalUsuario(){
-		render view:"inicioHelpDesk"
+		def ticketController = new TicketController()
+		ticketController.list2(10)
+		render view:"inicioHelpDesk", model:[ticketInstanceList:params.ticketInstanceList,ticketInstanceTotal:params.ticketInstanceTotal]
 	}
 }

@@ -14,7 +14,7 @@ class Ticket {
 	static belongsTo = [cliente: Cliente, clase: ClaseTicket]
 
     static constraints = {
-		numeroDeTicket(maxSize:10, nullable: true, editable:false)
+		numeroDeTicket(maxSize:10, nullable: true)
 		descripcion(widget:"textarea") 		
     }
 	

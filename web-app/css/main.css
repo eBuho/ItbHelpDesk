@@ -59,15 +59,18 @@ body {
 	margin:-95px 0 0 95px; 
 	position:absolute;
 }
-#itbCabecera .bienvenida a {
+#itbCabecera .bienvenida p {
 	color: #00afef;
 }
 #itbCabecera .sesion {
-	margin:-95px 0 0 780px; 
-	position:right;
+	width: 940px;
+	margin-top:-95px;
+	text-align:right;
+	position: absolute;
 }
-#itbCabecera .sesion a {
+#itbCabecera .sesion p {
 	color: #00afef;
+	font-size: 0.8em;
 }
 /* replace with .no-boxshadow body if you have modernizr available */
 .ie6 body,

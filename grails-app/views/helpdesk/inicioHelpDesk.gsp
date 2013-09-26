@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<meta name='layout' content='main'/>
+		<g:set var="entityName" value="${message(code: 'ticket.label', default: 'Ticket')}" />
 		<title><g:message code="springSecurity.login.title"/></title>
 		<style type="text/css">			
 			#contenido{
@@ -50,6 +51,10 @@
 					<g:textArea name="probFrecuentes" value="" rows="10" cols="70"/>
 				</div>
 			</div>
-		</div><!-- Contenido -->
+		</div>
+		<!-- Grilla -->
+		<g:render template="/ticket/list" model="[ticketInstanceList:ticketInstanceList,ticketInstanceTotal:ticketInstanceTotal]" />
+
+		<!-- Contenido -->
 	</body>
 </html>
