@@ -1,3 +1,5 @@
+import java.util.Date;
+
 import pe.itb.comunes.*
 import pe.itb.helpdesk.*
 import pe.itb.seguridad.*
@@ -61,25 +63,6 @@ class BootStrap {
 			}
 			parametro.save(true)
 		}
-
-		/*** Creacion de usuarios de prueba ****/
-		def jcondor = new Usuario(apePaterno:"Condor", apeMaterno:"Oria", nombres:"Javier", tipDocumento:"D",
-		numDocumento:"12345678", username:"jcondor", password:"jcondor", enabled:true)
-		jcondor.validate()
-		if (jcondor.hasErrors()){
-			jcondor.errors.allErrors.each { println it }
-		}
-		jcondor.save(true)
-
-		/*** Nuevo cliente ***/
-		def jcondorc = new Cliente()
-		jcondorc.properties = jcondor.properties
-		jcondorc.codCliente = "000001"
-		jcondorc.validate()
-		if (jcondorc.hasErrors()){
-			jcondorc.errors.allErrors.each { println it }
-		}
-		jcondorc.save(true)
 
 		/*** Ubigeos ***/
 		int contProv, contDist, contDpto
@@ -153,6 +136,34 @@ class BootStrap {
 				}
 			}
 		}
+		/*** Creacion de usuarios de prueba ****/
+		def ubigeo = Ubigeo.findByCodUbigeo("150101")
+		def jcondor = new Usuario(apePaterno:"Condor", apeMaterno:"Oria", nombre:"Javier", tipDocumento:"D",
+		numDocumento:"12345678", ubigeo:ubigeo, username:"jcondor", password:"jcondor", enabled:true)
+		jcondor.validate()
+		if (jcondor.hasErrors()){
+			jcondor.errors.allErrors.each { println it }
+		}
+		jcondor.save(true)
+
+		/*** Nuevo cliente ***/
+		def jcondorc = new Cliente()
+		jcondorc.properties = jcondor.properties
+		jcondorc.codCliente = "000001"
+		jcondorc.validate()
+		if (jcondorc.hasErrors()){
+			jcondorc.errors.allErrors.each { println it }
+		}
+		jcondorc.save(true)
+		
+		/*** Ticket de prueba ***/
+		def ticket = new Ticket(numeroDeTicket:"000001", fechaDeSolicitud:new Date(), asunto:"Error de programa",
+			estado:"A", descripcion:"Al grabar la carta garantia sale un error", cliente:jcondorc, usuarioCrea:jcondor.username)
+		ticket.validate()
+		if (ticket.hasErrors()){
+			ticket.errors.allErrors.each { println it }
+		}
+		ticket.save(true)
 	}
 
 	def destroy = {
