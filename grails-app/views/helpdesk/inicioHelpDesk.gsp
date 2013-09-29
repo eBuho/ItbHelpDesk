@@ -50,7 +50,7 @@
 		</div>
 
 		<div class="grilladet">
-			<g:render template="/ticket/list"
+			<g:render template="/Ticket/list"
 				model="[ticketInstanceList:ticketInstanceList,ticketInstanceTotal:ticketInstanceTotal]" />
 		</div>
 	</div>

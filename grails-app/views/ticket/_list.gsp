@@ -16,6 +16,23 @@
 	<h1>
 		<g:message code="default.list.label" args="[entityName]" />
 	</h1>
+	<div>
+		<div style="float: left; width: 100px">
+			Mis Tickets
+		</div>		
+		<div style="float: left;">
+			<g:link controller="ticket" action="buscar" id="1"
+				style="color: black; text-decoration: none;">Todos</g:link> |
+			<g:link controller="ticket" action="buscar" id="P"
+				style="color: black; text-decoration: none;">Pendientes</g:link> |
+			<g:link controller="ticket" action="buscar" id="R"
+				style="color: black; text-decoration: none;">Resueltos</g:link> |
+			<g:link controller="ticket" action="buscar" id="E"
+				style="color: black; text-decoration: none;">Eliminados</g:link> |
+			<g:link controller="ticket" action="create" 
+				style="color: black; text-decoration: none;">Nuevo Ticket</g:link>
+		</div>		
+	</div>
 	<g:if test="${flash.message}">
 		<div class="message" role="status">
 			${flash.message}
@@ -40,6 +57,9 @@
 
 				<g:sortableColumn property="descripcion"
 					title="${message(code: 'ticket.descripcion.label', default: 'Descripcion')}" />
+			   
+			    <g:sortableColumn property="Editar"
+					title="${message(code: 'ticket.descripcion.label', default: 'Editar')}" />
 
 			</tr>
 		</thead>
@@ -47,10 +67,8 @@
 			<g:each in="${ticketInstanceList}" status="i" var="ticketInstance">
 				<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
-					<td><g:link action="show" id="${ticketInstance.id}">
-							${fieldValue(bean: ticketInstance, field: "numeroDeTicket")}
-						</g:link></td>
-
+					<td>
+						${fieldValue(bean: ticketInstance, field: "numeroDeTicket")}
 					<td>
 						${fieldValue(bean: ticketInstance, field: "asunto")}
 					</td>
@@ -67,6 +85,12 @@
 
 					<td>
 						${fieldValue(bean: ticketInstance, field: "descripcion")}
+					</td>
+					
+					<td>
+						<g:link controller="ticket" action="show" id="${ticketInstance.id}">
+							Editar
+						</g:link>
 					</td>
 
 				</tr>

@@ -118,4 +118,17 @@ class TicketController {
             redirect(action: "show", id: id)
         }
     }
+	
+	def buscar(){
+		def estado = params.id
+		def ticketInstanceList
+		if (estado ==  "1"){
+			ticketInstanceList = Ticket.list()
+		}
+		else{
+			ticketInstanceList = Ticket.findAllByEstado(estado)
+		}
+		def ticketInstanceTotal = ticketInstanceList.size()
+		render(view: "/helpdesk/inicioHelpDesk",controller:"HelpDesk", model: [ticketInstanceList: ticketInstanceList,ticketInstanceTotal: ticketInstanceTotal])
+	}
 }

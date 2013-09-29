@@ -16,4 +16,5 @@ class HelpDeskController {
 		ticketController.list2(10)
 		render view:"inicioHelpDesk", model:[ticketInstanceList:params.ticketInstanceList,ticketInstanceTotal:params.ticketInstanceTotal]
 	}
+	
 }
