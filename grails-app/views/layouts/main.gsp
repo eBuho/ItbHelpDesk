@@ -27,7 +27,7 @@
 </head>
 <body>
 	<div id="itbCabecera" role="banner">
-		<a href="http://www.itbconsulting.pe"> <img
+		<a href="${createLink(uri: '/')}"> <img
 			src="${resource(dir: 'images', file: 'itbCabecera.png')}"
 			alt="itbHelpDesk" />
 		</a>

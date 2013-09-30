@@ -129,6 +129,7 @@ class TicketController {
 			ticketInstanceList = Ticket.findAllByEstado(estado)
 		}
 		def ticketInstanceTotal = ticketInstanceList.size()
-		render(view: "/helpdesk/inicioHelpDesk",controller:"HelpDesk", model: [ticketInstanceList: ticketInstanceList,ticketInstanceTotal: ticketInstanceTotal])
+		//render(view: "/helpdesk/inicioHelpDesk",controller:"HelpDesk", model: [ticketInstanceList: ticketInstanceList,ticketInstanceTotal: ticketInstanceTotal])
+		render template:"list", model:[ticketInstanceList:ticketInstanceList, ticketInstanceTotal:ticketInstanceTotal]
 	}
 }

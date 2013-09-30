@@ -1,9 +1,9 @@
 <html>
 <head>
 <meta name='layout' content='main' />
-<g:set var="entityName"
-	value="${message(code: 'ticket.label', default: 'Ticket')}" />
-<title><g:message code="springSecurity.login.title" /></title>
+
+<title><g:message code="default.helpdesk.label" default="Mesa de Ayuda" /></title>
+<g:javascript library="jquery"/>
 <style type="text/css">
 #contenido {
 	padding-top: 1%;
@@ -49,8 +49,8 @@
 			</div>
 		</div>
 
-		<div class="grilladet">
-			<g:render template="/Ticket/list"
+		<div class="grilladet" id="grilladet">
+			<g:render template="list" contextPath="/ticket/"
 				model="[ticketInstanceList:ticketInstanceList,ticketInstanceTotal:ticketInstanceTotal]" />
 		</div>
 	</div>

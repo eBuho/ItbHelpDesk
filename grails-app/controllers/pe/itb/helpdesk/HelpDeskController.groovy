@@ -1,4 +1,4 @@
-package itbhelpdesk
+package pe.itb.helpdesk
 import pe.itb.helpdesk.*
 
 class HelpDeskController {
