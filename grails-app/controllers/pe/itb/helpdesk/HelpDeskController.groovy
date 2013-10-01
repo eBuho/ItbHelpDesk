@@ -14,7 +14,7 @@ class HelpDeskController {
 	def principalUsuario(){
 		def ticketController = new TicketController()
 		ticketController.list2(10)
-		render view:"inicioHelpDesk", model:[ticketInstanceList:params.ticketInstanceList,ticketInstanceTotal:params.ticketInstanceTotal]
+		render view:"inicioHelpDesk", model:[ticketInstanceList:params.ticketInstanceList,ticketInstanceTotal:params.ticketInstanceTotal, cont:params.cont]
 	}
 	
 }

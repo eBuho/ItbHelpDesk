@@ -18,24 +18,24 @@
 	--%><div>
 		<div style="float: left; width: 100px"><g:message code="default.list2.label" args="[entityName]" /></div>
 		<div style="float: left;">
-			<g:remoteLink controller="ticket" action="buscar" id="1" update="grilladet"
+			<g:remoteLink controller="ticket" action="buscar" id="T" update="grilladet"
 				style="color: black; text-decoration: none;">
-				Todos (${cont[0]})
+				Todos (${cont.get("T")})
 			</g:remoteLink>
 			|
 			<g:remoteLink controller="ticket" action="buscar" id="P" update="grilladet"
 				style="color: black; text-decoration: none;">
-				Pendientes (${cont[1]})
+				Pendientes (${cont.get("P")})
 			</g:remoteLink>
 			|
 			<g:remoteLink controller="ticket" action="buscar" id="R" update="grilladet"
 				style="color: black; text-decoration: none;">
-				Resueltos (${cont[2]})
+				Resueltos (${cont.get("R")})
 			</g:remoteLink>
 			|
 			<g:remoteLink controller="ticket" action="buscar" id="E" update="grilladet"
 				style="color: black; text-decoration: none;">
-				Eliminados (${cont[3]})
+				Eliminados (${cont.get("E")})
 			</g:remoteLink>
 			|
 			<g:link controller="ticket" action="create" style="color: black; text-decoration: none;">Nuevo Ticket</g:link>

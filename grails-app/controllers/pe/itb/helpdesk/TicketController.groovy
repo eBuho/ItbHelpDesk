@@ -23,8 +23,10 @@ class TicketController {
         def ticketInstanceList = Ticket.list(params)		
 		ticketInstanceList = Ticket.findAllByUsuarioCrea(usuario)
 		def ticketInstanceTotal = Ticket.count()
+		def contEstado = contador()
 		params.ticketInstanceList = ticketInstanceList
 		params.ticketInstanceTotal = ticketInstanceTotal
+		params.cont = contEstado
 		
 		//render template:"list", model:[ticketInstanceList:ticketInstanceList, ticketInstanceTotal:ticketInstanceTotal]
     }
@@ -125,15 +127,14 @@ class TicketController {
 		def estado = params.id
 		def usuario = springSecurityService.principal.username
 		def ticketInstanceList		
-		if (estado ==  "1"){
+		if (estado ==  "T"){
 			ticketInstanceList = Ticket.findAllByUsuarioCrea(usuario)
 		}
 		else{
 			ticketInstanceList = Ticket.findAllByEstadoAndUsuarioCrea(estado, usuario)
 		}
 		def ticketInstanceTotal = ticketInstanceList.size()
-		def contEstado = []
-		contEstado = contador()
+		def contEstado = contador()
 		//render(view: "/helpdesk/inicioHelpDesk",controller:"HelpDesk", model: [ticketInstanceList: ticketInstanceList,ticketInstanceTotal: ticketInstanceTotal])
 		render template:"list", model:[ticketInstanceList:ticketInstanceList, ticketInstanceTotal:ticketInstanceTotal, cont:contEstado]
 	}	
@@ -153,7 +154,7 @@ class TicketController {
 		cont3 = ticketInstanceList.size()
 		ticketInstanceList = Ticket.findAllByEstadoAndUsuarioCrea("E", usuario)
 		cont4 = ticketInstanceList.size()
-		def contEstado = [cont1, cont2, cont3, cont4]
+		def contEstado = [T:cont1, P:cont2, R:cont3, E:cont4]
 	}
 		
 }
