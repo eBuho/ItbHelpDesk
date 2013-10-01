@@ -142,19 +142,19 @@ class TicketController {
 	def contador(){
 		def usuario = springSecurityService.principal.username
 		def ticketInstanceList
-		def cont1
-		def cont2
-		def cont3
-		def cont4		
-		ticketInstanceList = Ticket.findAllByUsuarioCrea(usuario)
-		cont1 = ticketInstanceList.size()
-		ticketInstanceList = Ticket.findAllByEstadoAndUsuarioCrea("P", usuario)
-		cont2 = ticketInstanceList.size()
-		ticketInstanceList = Ticket.findAllByEstadoAndUsuarioCrea("R", usuario)
-		cont3 = ticketInstanceList.size()
-		ticketInstanceList = Ticket.findAllByEstadoAndUsuarioCrea("E", usuario)
-		cont4 = ticketInstanceList.size()
-		def contEstado = [T:cont1, P:cont2, R:cont3, E:cont4]
+		def cont	
+		def contEstado = [:]
+		["T", "P", "R", "E"].each{estado ->
+			if (estado == "T"){
+				ticketInstanceList = Ticket.findAllByUsuarioCrea(usuario)	
+			}
+			else{
+				ticketInstanceList = Ticket.findAllByEstadoAndUsuarioCrea(estado, usuario)
+			}
+			cont = ticketInstanceList.size()
+			contEstado[estado] = cont			
+		}
+		return contEstado	
 	}
 		
 }
