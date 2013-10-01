@@ -19,16 +19,24 @@
 		<div style="float: left; width: 100px"><g:message code="default.list2.label" args="[entityName]" /></div>
 		<div style="float: left;">
 			<g:remoteLink controller="ticket" action="buscar" id="1" update="grilladet"
-				style="color: black; text-decoration: none;">Todos</g:remoteLink>
+				style="color: black; text-decoration: none;">
+				Todos (${cont[0]})
+			</g:remoteLink>
 			|
 			<g:remoteLink controller="ticket" action="buscar" id="P" update="grilladet"
-				style="color: black; text-decoration: none;">Pendientes</g:remoteLink>
+				style="color: black; text-decoration: none;">
+				Pendientes (${cont[1]})
+			</g:remoteLink>
 			|
 			<g:remoteLink controller="ticket" action="buscar" id="R" update="grilladet"
-				style="color: black; text-decoration: none;">Resueltos</g:remoteLink>
+				style="color: black; text-decoration: none;">
+				Resueltos (${cont[2]})
+			</g:remoteLink>
 			|
 			<g:remoteLink controller="ticket" action="buscar" id="E" update="grilladet"
-				style="color: black; text-decoration: none;">Eliminados</g:remoteLink>
+				style="color: black; text-decoration: none;">
+				Eliminados (${cont[3]})
+			</g:remoteLink>
 			|
 			<g:link controller="ticket" action="create" style="color: black; text-decoration: none;">Nuevo Ticket</g:link>
 		</div>

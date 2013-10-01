@@ -12,14 +12,16 @@ class TicketController {
         redirect(action: "list", params: params)
     }
 	
-	def list(Integer max) {
+	def list(Integer max) {				
 		params.max = Math.min(max ?: 10, 100)
 		[ticketInstanceList: Ticket.list(params), ticketInstanceTotal: Ticket.count()]
 	}
 	
     def list2(Integer max) {
+		def usuario = springSecurityService.principal.username
         params.max = Math.min(max ?: 10, 100)
-        def ticketInstanceList = Ticket.list(params)
+        def ticketInstanceList = Ticket.list(params)		
+		ticketInstanceList = Ticket.findAllByUsuarioCrea(usuario)
 		def ticketInstanceTotal = Ticket.count()
 		params.ticketInstanceList = ticketInstanceList
 		params.ticketInstanceTotal = ticketInstanceTotal
@@ -121,15 +123,37 @@ class TicketController {
 	
 	def buscar(){
 		def estado = params.id
-		def ticketInstanceList
+		def usuario = springSecurityService.principal.username
+		def ticketInstanceList		
 		if (estado ==  "1"){
-			ticketInstanceList = Ticket.list()
+			ticketInstanceList = Ticket.findAllByUsuarioCrea(usuario)
 		}
 		else{
-			ticketInstanceList = Ticket.findAllByEstado(estado)
+			ticketInstanceList = Ticket.findAllByEstadoAndUsuarioCrea(estado, usuario)
 		}
 		def ticketInstanceTotal = ticketInstanceList.size()
+		def contEstado = []
+		contEstado = contador()
 		//render(view: "/helpdesk/inicioHelpDesk",controller:"HelpDesk", model: [ticketInstanceList: ticketInstanceList,ticketInstanceTotal: ticketInstanceTotal])
-		render template:"list", model:[ticketInstanceList:ticketInstanceList, ticketInstanceTotal:ticketInstanceTotal]
+		render template:"list", model:[ticketInstanceList:ticketInstanceList, ticketInstanceTotal:ticketInstanceTotal, cont:contEstado]
+	}	
+	
+	def contador(){
+		def usuario = springSecurityService.principal.username
+		def ticketInstanceList
+		def cont1
+		def cont2
+		def cont3
+		def cont4		
+		ticketInstanceList = Ticket.findAllByUsuarioCrea(usuario)
+		cont1 = ticketInstanceList.size()
+		ticketInstanceList = Ticket.findAllByEstadoAndUsuarioCrea("P", usuario)
+		cont2 = ticketInstanceList.size()
+		ticketInstanceList = Ticket.findAllByEstadoAndUsuarioCrea("R", usuario)
+		cont3 = ticketInstanceList.size()
+		ticketInstanceList = Ticket.findAllByEstadoAndUsuarioCrea("E", usuario)
+		cont4 = ticketInstanceList.size()
+		def contEstado = [cont1, cont2, cont3, cont4]
 	}
+		
 }

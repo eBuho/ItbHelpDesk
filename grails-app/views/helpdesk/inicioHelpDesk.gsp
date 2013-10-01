@@ -14,13 +14,13 @@
 
 #contenido .pregFrecuentes {
 	padding-left: 2%;
-	width: 300px;
+	width: 48%;
 	float: left;
 }
 
 #contenido .novedades {
 	padding-left: 2%;
-	width: 300px;
+	width: 48%;
 	float: left;
 }
 #contenido .grilladet {
@@ -39,13 +39,13 @@
 		<div class="pregFrecuentes">
 			<p>Problemas Frecuentes</p>
 			<div>
-				<g:textArea name="probFrecuentes" value="" />
+				<g:textArea name="probFrecuentes" value="" width="100%" />
 			</div>
 		</div>
 		<div class="novedades">
 			<p>Novedades</p>
 			<div>
-				<g:textArea name="novedades" value="" />
+				<g:textArea name="novedades" value="" width="100%"/>
 			</div>
 		</div>
 

@@ -156,6 +156,24 @@ class BootStrap {
 		}
 		jcondorc.save(true)
 		
+		def acardenas = new Usuario(apePaterno:"Cardenas", apeMaterno:"Contreras", nombre:"Antoni", tipDocumento:"D",
+			numDocumento:"46609636", ubigeo:ubigeo, username:"acardenas", password:"acardenas", enabled:true)
+		acardenas.validate()
+		if (acardenas.hasErrors()){
+			acardenas.errors.allErrors.each { println it }
+		}
+		acardenas.save(true)
+	
+			/*** Nuevo cliente ***/
+		def acardenasc = new Cliente()
+		acardenasc.properties = acardenas.properties
+		acardenasc.codCliente = "000002"
+		acardenasc.validate()
+		if (acardenasc.hasErrors()){
+			acardenasc.errors.allErrors.each { println it }
+		}
+		acardenasc.save(true)
+		
 		/*** Ticket de prueba ***/
 		def ticket = new Ticket(numeroDeTicket:"000001", fechaDeSolicitud:new Date(), asunto:"Error de programa",
 			estado:"A", descripcion:"Al grabar la carta garantia sale un error", cliente:jcondorc, usuarioCrea:jcondor.username)
@@ -164,6 +182,14 @@ class BootStrap {
 			ticket.errors.allErrors.each { println it }
 		}
 		ticket.save(true)
+		
+		def ticket2 = new Ticket(numeroDeTicket:"000002", fechaDeSolicitud:new Date(), asunto:"Error de programa",
+			estado:"A", descripcion:"Al grabar la carta garantia sale un error", cliente:acardenasc, usuarioCrea:acardenas.username)
+		ticket2.validate()
+		if (ticket2.hasErrors()){
+			ticket2.errors.allErrors.each { println it }
+		}
+		ticket2.save(true)
 	}
 
 	def destroy = {
