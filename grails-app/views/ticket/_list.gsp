@@ -1,46 +1,37 @@
 
 <%@ page import="pe.itb.helpdesk.Ticket"%>
-<g:set var="entityName" value="${message(code: 'ticket.label', default: 'Ticket')}" />
-<a href="#list-ticket" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
-		default="Skip to content&hellip;" /></a>
-<div class="nav" role="navigation">
-	<%--<ul>
-		<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label" /></a></li>
-		<li><g:link class="create" action="create">
-				<g:message code="default.new.label" args="[entityName]" />
-			</g:link></li>
-	</ul>--%>
-</div>
-<div id="list-ticket" class="content scaffold-list" role="main">
-	<%--<h1>
-		<g:message code="default.list.label" args="[entityName]" />
-	</h1>
-	--%><div>
-		<div style="float: left; width: 100px"><g:message code="default.list2.label" args="[entityName]" /></div>
-		<div style="float: left;">
-			<g:remoteLink controller="ticket" action="buscar" id="T" update="grilladet"
-				style="color: black; text-decoration: none;">
-				Todos (${cont.get("T")})
+<g:set var="entityName"
+	value="${message(code: 'ticket.label', default: 'Ticket')}" />
+<a href="#list-ticket" class="skip" tabindex="-1"><g:message
+		code="default.link.skip.label" default="Skip to content&hellip;" /></a>
+
+<%--<div id="list-ticket" role="main">
+	--%>
+	<div id ="menugrilla" class ="menugrilla" style = "float:left">
+			<h3><a><g:message code="default.list2.label" args="[entityName]" /></a></h3>
+	</div>
+			<g:remoteLink controller="ticket" action="buscar" id="T"
+				update="grilladet" >
+				  Todos (${cont.get("T")})
 			</g:remoteLink>
 			|
-			<g:remoteLink controller="ticket" action="buscar" id="P" update="grilladet"
-				style="color: black; text-decoration: none;">
+			<g:remoteLink controller="ticket" action="buscar" id="P"
+				update="grilladet">
 				Pendientes (${cont.get("P")})
 			</g:remoteLink>
 			|
-			<g:remoteLink controller="ticket" action="buscar" id="R" update="grilladet"
-				style="color: black; text-decoration: none;">
+			<g:remoteLink controller="ticket" action="buscar" id="R"
+				update="grilladet" >
 				Resueltos (${cont.get("R")})
 			</g:remoteLink>
 			|
-			<g:remoteLink controller="ticket" action="buscar" id="E" update="grilladet"
-				style="color: black; text-decoration: none;">
+			<g:remoteLink controller="ticket" action="buscar" id="E"
+				update="grilladet" >
 				Eliminados (${cont.get("E")})
 			</g:remoteLink>
 			|
-			<g:link controller="ticket" action="create" style="color: black; text-decoration: none;">Nuevo Ticket</g:link>
-		</div>
-	</div>
+			<g:link controller="ticket" action="create">Nuevo Ticket</g:link>
+
 	<g:if test="${flash.message}">
 		<div class="message" role="status">
 			${flash.message}
@@ -82,7 +73,8 @@
 					<td>
 						${fieldValue(bean: ticketInstance, field: "descripcion")}
 					</td>
-					<td><g:link controller="ticket" action="show" id="${ticketInstance.id}">
+					<td><g:link controller="ticket" action="show"
+							id="${ticketInstance.id}">
 							Ver
 						</g:link></td>
 				</tr>
@@ -92,4 +84,5 @@
 	<div class="pagination">
 		<g:paginate total="${ticketInstanceTotal}" />
 	</div>
-</div>
+<%--</div>
+--%>
