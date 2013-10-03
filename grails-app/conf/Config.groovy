@@ -110,3 +110,16 @@ grails.plugins.springsecurity.interceptUrlMap = [
 grails.gorm.default.constraints = {
 	'*'(nullable: true)
 }
+
+grails {
+	mail {
+	  host = "smtp.gmail.com"
+	  port = 465
+	  username = "cgs.auditor@gmail.com"
+	  password = "auditor123"
+	  props = ["mail.smtp.auth":"true",
+			   "mail.smtp.socketFactory.port":"465",
+			   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+			   "mail.smtp.socketFactory.fallback":"false"]
+	}
+ }

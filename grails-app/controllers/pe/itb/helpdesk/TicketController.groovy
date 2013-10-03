@@ -1,10 +1,13 @@
 package pe.itb.helpdesk
 
+import grails.plugin.mail.MailService;
+
 import org.springframework.dao.DataIntegrityViolationException
 
 class TicketController {
 	
 	def springSecurityService
+	def mailService
 	
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -154,6 +157,11 @@ class TicketController {
 			cont = ticketInstanceList.size()
 			contEstado[estado] = cont			
 		}
+		mailService.sendMail {
+			to "antonycrds@gmail.com"
+			subject "Hello Fred"
+			body 'How are you?'
+		  }
 		return contEstado	
 	}
 		
